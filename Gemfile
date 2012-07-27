@@ -36,3 +36,10 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
+
+gem 'rspec-rails', :group => [:test, :development]
+group :test do
+  gem 'guard-rspec'
+  gem 'capybara'
+  gem 'factory_girl_rails'
+end
