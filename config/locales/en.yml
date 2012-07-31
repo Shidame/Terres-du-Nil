@@ -3,3 +3,12 @@
 
 en:
   hello: "Hello world"
+  simple_form:
+    labels:
+      session:
+        email: "Email"
+        password: "Password"
+  helpers:
+    submit:
+      session:
+        submit: "Sign In"

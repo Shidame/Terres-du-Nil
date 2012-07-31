@@ -31,4 +31,13 @@ describe User do
     FactoryGirl.build(:user, username: "a").should_not be_valid
     FactoryGirl.build(:user, username: "averyveryveryverylongusername").should_not be_valid
   end
+  it "is invalid when persistence token is already used by another user" do
+    token = User.generate_token
+    FactoryGirl.create(:user, persistence_token: token).should be_valid
+    FactoryGirl.build(:user, username: "Charle", email: "charle@example.com", persistence_token: token).should_not be_valid
+  end
+  it "generates a unique persistence token" do
+    FactoryGirl.create(:user, username: "John", email: "john@example.com", persistence_token: User.generate_token).should be_valid
+    FactoryGirl.build(:user, username: "Charle", email: "charle@example.com", persistence_token: User.generate_token).should be_valid
+  end
 end

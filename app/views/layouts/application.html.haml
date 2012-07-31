@@ -31,6 +31,8 @@
               %li= link_to "Link 1", "/path1"
               %li= link_to "Link 2", "/path2"
               %li= link_to "Link 3", "/path3"
+              - if current_user
+                %li= "Welcome #{current_user.username}"
 
     .container
 
@@ -40,13 +42,9 @@
             = yield
           .span3
             .well.sidebar-nav
-              %h3 Sidebar
-              %ul.nav.nav-list
-                %li.nav-header Sidebar
-                %li= link_to "Link 1", "/path1"
-                %li= link_to "Link 2", "/path2"
-                %li= link_to "Link 3", "/path3"
-    
+              %h3 Sign In
+              = render "sessions/form"
+
       %footer
         %p &copy; Company 2012
     /
