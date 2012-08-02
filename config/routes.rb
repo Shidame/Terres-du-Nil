@@ -1,8 +1,11 @@
 TerresDuNil::Application.routes.draw do
+  get '/logout', to: 'sessions#destroy', as: 'logout'
+  get '/game', to: 'game#index', as: 'game'
   resources :users
   resources :sessions
+  resources :articles
 
-  root to: 'home#index'
+  root to: 'main#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

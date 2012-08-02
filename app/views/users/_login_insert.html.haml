@@ -1,3 +1,4 @@
+%h3 Sign In
 = simple_form_for :session, url: sessions_path do |f|
   - if flash[:error]
     .alert.alert-error
@@ -7,3 +8,4 @@
   = f.input :password, required: false, input_html: { class: 'error' }
 
   = f.button :submit, class: 'btn-primary'
+

@@ -6,6 +6,7 @@ class UsersController < ApplicationController
       cookies.signed[:persistence_token] = @user.persistence_token
       redirect_to root_url, notice: "Thank you for signing up!"
     else
+      flash[:errors] = @user
       redirect_to root_url
     end
   end

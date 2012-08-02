@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
 
     if user && user.authenticate(params[:session][:password])
       cookies.signed[:persistence_token] = user.persistence_token
-      redirect_to root_path
+      redirect_to game_path
     else
       flash[:error] = 'Email or password is invalid'
       flash[:email] = params[:session][:email]
@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
 
 
   def destroy
-    cookies.signed[:token] = nil
+    cookies.signed[:persistence_token] = nil
     redirect_to root_path
   end
 end

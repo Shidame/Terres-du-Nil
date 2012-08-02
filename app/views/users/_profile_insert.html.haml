@@ -1,0 +1,5 @@
+%h5= "Currently logged as: #{user.username}"
+= image_tag("profile/user_male.png")
+%p
+  = link_to "Enter the game", game_path, class: "btn btn-success"
+  = link_to "Log Out", logout_path, class: "btn btn-danger"

@@ -29,22 +29,11 @@
           .container.nav-collapse
             %ul.nav
               %li= link_to "Home", root_path
+              %li= link_to "Logout", logout_path
 
-    .container
+    .container#container
+      = yield
 
-      .content
-        .row
-          .span9
-            = yield
-          .span3
-            .well.sidebar-nav
-              - if current_user
-                = render "users/profile_insert", user: current_user
-              - else
-                = render "users/login_insert"
-
-      %footer
-        %p &copy; Company 2012
     /
       Javascripts
       \==================================================
