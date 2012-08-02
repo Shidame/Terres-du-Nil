@@ -1,0 +1,12 @@
+.navbar.navbar-fixed-top
+  .navbar-inner
+    .container
+      %a.btn.btn-navbar(data-target=".nav-collapse" data-toggle="collapse")
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      %a.brand(href="#") TerresDuNil
+      .container.nav-collapse
+        %ul.nav
+          %li= link_to "Home", root_path
+          %li= link_to "Logout", logout_path

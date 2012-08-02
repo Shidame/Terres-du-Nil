@@ -18,24 +18,14 @@
 
 
   %body
-    .navbar.navbar-fixed-top
-      .navbar-inner
-        .container
-          %a.btn.btn-navbar(data-target=".nav-collapse" data-toggle="collapse")
-            %span.icon-bar
-            %span.icon-bar
-            %span.icon-bar
-          %a.brand(href="#") TerresDuNil
-          .container.nav-collapse
-            %ul.nav
-              %li= link_to "Home", root_path
-              %li= link_to "Logout", logout_path
+    = render "game/top_navbar"
 
     .container#container
       = yield
 
+    = render "game/bottom_navbar"
     /
       Javascripts
       \==================================================
     / Placed at the end of the document so the pages load faster
-    = javascript_include_tag "application"
+    = javascript_include_tag "game"
