@@ -1,0 +1,10 @@
+%table.table.table-condensed
+  %thead
+    %tr
+      %th City name
+      %th User name
+  %tbody
+    - @cities.each do |city|
+      %tr
+        %td= city.name
+        %td= city.user.username

@@ -1,0 +1,8 @@
+- cities.each do |c|
+  %li
+    - if c == current_city
+      = link_to c do
+        = c.name
+        %i.icon-ok
+    - else
+      = link_to c.name, c

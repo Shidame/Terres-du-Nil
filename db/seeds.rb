@@ -5,9 +5,15 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+city1 = City.create!(name: "Grundvlad")
+city2 = City.create!(name: "Heartland")
+city3 = City.create!(name: "Erftis")
+
 demo = User.create!(username: "Demo", email: "demo@demo.com", password: "demo", password_confirmation: "demo")
 demo.persistence_token = User.generate_token
+demo.cities << city1 << city2
 demo.save!
+
 
 article = Article.create!(title: "This is the first article title", content: "And here the first content. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ipsum velit, dapibus quis blandit in, consequat ut mauris. Aliquam rhoncus purus a nibh hendrerit fermentum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed libero ante, vestibulum vulputate ornare et, mollis ut mauris. Donec lorem odio, consectetur nec dapibus quis, elementum eget neque. Cras ante nibh, imperdiet vitae fermentum nec, tristique sed eros. Nullam id elit dui, eu consectetur nulla. Donec sed augue et libero volutpat posuere. Ut tortor ligula, porta sed volutpat sed, luctus a massa. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
 
