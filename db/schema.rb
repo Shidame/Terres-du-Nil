@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120802131314) do
+ActiveRecord::Schema.define(:version => 20120810133224) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -22,6 +22,46 @@ ActiveRecord::Schema.define(:version => 20120802131314) do
   end
 
   add_index "articles", ["user_id"], :name => "index_articles_on_user_id"
+
+  create_table "building_types", :force => true do |t|
+    t.string   "name"
+    t.integer  "width"
+    t.integer  "height"
+    t.string   "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "buildings", :force => true do |t|
+    t.integer  "city_id"
+    t.integer  "building_type_id"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
+  add_index "buildings", ["building_type_id"], :name => "index_buildings_on_building_type_id"
+  add_index "buildings", ["city_id"], :name => "index_buildings_on_city_id"
+
+  create_table "cities", :force => true do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "cities", ["user_id"], :name => "index_cities_on_user_id"
+
+  create_table "tiles", :force => true do |t|
+    t.integer  "x"
+    t.integer  "y"
+    t.integer  "city_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.integer  "building_id"
+  end
+
+  add_index "tiles", ["building_id"], :name => "index_tiles_on_building_id"
+  add_index "tiles", ["city_id"], :name => "index_tiles_on_city_id"
 
   create_table "users", :force => true do |t|
     t.string   "username"

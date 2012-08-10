@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  has_many :cities
+
   has_secure_password
   attr_accessible :username, :email, :password, :password_confirmation
 
