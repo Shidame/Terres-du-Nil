@@ -1,1 +1,4 @@
-game#index.html.haml
+#maps
+  - @map.each_with_index do |tile, index|
+    %div{class: "tile-#{index} tile", id: "tile-#{tile.id}", data: {title: "Tile (#{tile.x},#{tile.y})", content: "tile-id: #{tile.id}"} }
+

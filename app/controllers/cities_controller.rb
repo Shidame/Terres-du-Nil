@@ -1,4 +1,4 @@
-class CitiesController < ApplicationController
+class CitiesController < GameController
   layout "game"
   def index
     @cities = current_user.cities

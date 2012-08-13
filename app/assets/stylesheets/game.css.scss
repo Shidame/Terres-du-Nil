@@ -1,0 +1,33 @@
+// Place all the styles related to the Tiles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+$tile_size: 40px;
+$nb_tile_per_row: 25;
+$nb_tile_per_col: 10;
+#maps {
+  position: relative;
+  height: $nb_tile_per_col*$tile_size;
+  width: $nb_tile_per_row*$tile_size;
+  background-color: #CCCCCC;
+}
+
+#maps > div {
+  position: absolute;
+  height: $tile_size - 1;
+  width: $tile_size - 1;
+  font-size: 10px;
+  background-color: #BBBBBB;
+}
+#maps > div:hover {
+  background-color: red;
+}
+
+@for $i from 0 through $nb_tile_per_row*$nb_tile_per_col {
+  $y: floor($i/$nb_tile_per_row);
+  $x: ($i % $nb_tile_per_row);
+
+  .tile-#{$i} {
+    top: $y * $tile_size;
+    left: $x * $tile_size;
+  }
+}
