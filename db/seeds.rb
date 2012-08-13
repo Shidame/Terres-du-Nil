@@ -24,3 +24,10 @@ Sed et consectetur tortor. Sed tristique gravida tristique. Cras sed purus liber
 Vestibulum ante lectus, tincidunt non consequat nec, aliquam ac libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt, sem quis fringilla placerat, nibh nibh feugiat ipsum, non faucibus tortor elit hendrerit neque. Aliquam lectus nunc, pharetra non convallis nec, commodo eget augue. Sed et velit elit, vitae rutrum est. Quisque egestas dignissim luctus. Nulla magna purus, laoreet nec lobortis in, rutrum id mauris. Cras porta mauris ante. Sed at elit nisi. Sed gravida, justo et ullamcorper iaculis, velit justo tincidunt augue, fringilla faucibus diam ante quis sapien. Nulla luctus, est at cursus bibendum, urna mauris semper dolor, eu tristique felis leo vitae leo. Morbi tortor ipsum, iaculis in tincidunt sit amet, condimentum ut quam. Nunc dapibus mattis quam at fermentum.")
 article.user = demo
 article.save!
+
+
+BuildingType.create([ {name: "Hut", description: "A small hut mades of raw materials found here and there...", width: 1, height: 1},
+                      {name: "Big hut", description: "A solid hut, but still a hut...", width: 2, height: 2},
+                      {name: "Clay pit", description: "bla bla bla...", width: 3, height: 3},
+                      {name: "Farm", description: "bla bla bla...", width: 4, height: 5}
+                      ])
