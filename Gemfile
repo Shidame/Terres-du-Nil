@@ -24,6 +24,10 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'foreman'
+gem 'resque'
+gem 'resque-scheduler', :require => 'resque_scheduler'
+gem 'juggernaut'
 
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'

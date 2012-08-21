@@ -19,7 +19,7 @@ $nb_tile_per_col: 10;
   background-color: #BBBBBB;
 }
 #maps > div:hover {
-  background-color: red;
+  background-color: green;
 }
 
 @for $i from 0 through $nb_tile_per_row*$nb_tile_per_col {
@@ -30,4 +30,8 @@ $nb_tile_per_col: 10;
     top: $y * $tile_size;
     left: $x * $tile_size;
   }
+}
+
+#maps > div.red {
+  background-color: red;
 }

@@ -8,13 +8,14 @@
       .container.nav-collapse
         %ul.nav
           %li.dropdown
-            = link_to "#", data: {toggle: "dropdown"}, class: "dropdown-toggle" do
+            = link_to "#", id: "mybtn", data: {toggle: "dropdown"}, class: "dropdown-toggle" do
               %i.icon-home
               = current_city.name
               %b.caret
             %ul.dropdown-menu
               = render partial: 'cities/names_list', locals: { cities: current_user.cities }
           %li= link_to "My cities", cities_path
+          %li.navbar-text#current_date "test text here"
         %ul.nav.pull-right
           %li= link_to "Home", root_path
           %li= link_to "Logout", logout_path

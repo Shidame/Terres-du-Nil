@@ -5,6 +5,7 @@ TerresDuNil::Application.routes.draw do
   resources :sessions
   resources :articles
   resources :cities
+  resources :buildings
 
   root to: 'main#index'
   # The priority is based upon order of creation:

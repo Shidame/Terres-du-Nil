@@ -1,0 +1,5 @@
+clear_leaderboards_moderator:
+  every: "30s"
+  class: DayForward
+  queue: day_forward
+  description: "This job will increment the calendar by one day"
